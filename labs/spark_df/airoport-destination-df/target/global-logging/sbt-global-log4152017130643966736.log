@@ -1,0 +1,17 @@
+[debug] > Exec(package, None, None)
+[debug] Evaluating tasks: Compile / package
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+[info] compiling 1 Scala source to F:\repos\airoport-destination\target\scala-2.12\classes ...
+[info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.10. Compiling...
+[info]   Compilation completed in 22.851s.
+[error] F:\repos\airoport-destination\src\main\scala\com\procamp\MainRun.scala:9:25: value textFile is not a member of org.apache.spark.sql.SparkSession
+[error]     val flights = spark.textFile(conf.getString("global.trgt_path")+"flights.csv")
+[error]                         ^
+[error] F:\repos\airoport-destination\src\main\scala\com\procamp\MainRun.scala:11:26: value textFile is not a member of org.apache.spark.sql.SparkSession
+[error]     val airports = spark.textFile(conf.getString("global.trgt_path")+"airports.csv")
+[error]                          ^
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 106 s (01:46), completed 8 груд. 2020 23:02:01
+[debug] > Exec(idea-shell, None, None)

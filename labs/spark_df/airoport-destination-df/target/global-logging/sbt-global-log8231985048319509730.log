@@ -1,0 +1,8 @@
+[debug] > Exec(sbt-assembly, None, None)
+[error] Not a valid command: sbt-assembly
+[error] Not a valid project ID: sbt-assembly
+[error] Expected ':'
+[error] Not a valid key: sbt-assembly
+[error] sbt-assembly
+[error]             ^
+[debug] > Exec(idea-shell, None, None)

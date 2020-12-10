@@ -1,0 +1,62 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.4.4 (Oracle Corporation Java 1.8.0_261)
+[debug]       Load.loadUnit: plugins took 220.5588ms
+[debug]       Load.loadUnit: defsScala took 0.3769ms
+[debug] [Loading] Scanning directory C:\Users\VPasechnyk\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\VPasechnyk\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 32.6227 ms
+[debug]           Load.resolveProject(global-plugins) took 64.0326ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\VPasechnyk\.sbt\1.0\plugins, plugins: List(<none>))) took 132.4433ms
+[debug] [Loading] Done in C:\Users\VPasechnyk\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 158.2425ms
+[debug]       Load.loadUnit: cleanEvalClasses took 1.5277ms
+[debug]     Load.loadUnit(file:/C:/Users/VPasechnyk/.sbt/1.0/plugins/, ...) took 395.2922ms
+[debug]   Load.apply: load took 641.1506ms
+[debug]   Load.apply: resolveProjects took 10.7873ms
+[debug]   Load.apply: finalTransforms took 138.7981ms
+[debug]   Load.apply: config.delegates took 24.228ms
+[debug]   Load.apply: Def.make(settings)... took 3379.4238ms
+[debug]   Load.apply: structureIndex took 336.3569ms
+[debug]   Load.apply: mkStreams took 4.0808ms
+[info] loading global plugins from C:\Users\VPasechnyk\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 16519.3525ms
+[debug]           Load.loadUnit: plugins took 51.6344ms
+[debug]           Load.loadUnit: defsScala took 0.0042ms
+[debug] [Loading] Scanning directory F:\repos\airoport-destination\project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in F:\repos\airoport-destination\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 2.8331 ms
+[debug]               Load.resolveProject(airoport-destination-build) took 1.7211ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id airoport-destination-build, base: F:\repos\airoport-destination\project, plugins: List(<none>))) took 5.3091ms
+[debug] [Loading] Done in F:\repos\airoport-destination\project, returning: (airoport-destination-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 7.9737ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.0195ms
+[debug]         Load.loadUnit(file:/F:/repos/airoport-destination/project/, ...) took 60.8367ms
+[debug]       Load.apply: load took 63.7628ms
+[debug]       Load.apply: resolveProjects took 0.323ms
+[debug]       Load.apply: finalTransforms took 57.7031ms
+[debug]       Load.apply: config.delegates took 1.3134ms
+[debug]       Load.apply: Def.make(settings)... took 547.7091ms
+[debug]       Load.apply: structureIndex took 74.8279ms
+[debug]       Load.apply: mkStreams took 0.0042ms
+[info] loading project definition from F:\repos\airoport-destination\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 1489.4937ms
+[debug]     Load.loadUnit: defsScala took 0.0049ms
+[debug] [Loading] Scanning directory F:\repos\airoport-destination
+[debug]       Load.loadUnit: mkEval took 11.5818ms

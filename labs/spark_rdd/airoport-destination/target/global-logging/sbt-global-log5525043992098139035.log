@@ -1,0 +1,12 @@
+[debug] > Exec(package, None, None)
+[debug] Evaluating tasks: Compile / package
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+[info] compiling 1 Scala source to F:\repos\airoport-destination\target\scala-2.12\classes ...
+[error] F:\repos\airoport-destination\src\main\scala\com\procamp\MainRun.scala:14:24: value SparkContext is not a member of org.apache.spark.sql.SparkSession
+[error]     val mapAcc = spark.SparkContext.longAccumulator()
+[error]                        ^
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 3 s, completed 8 груд. 2020 23:58:27
+[debug] > Exec(idea-shell, None, None)

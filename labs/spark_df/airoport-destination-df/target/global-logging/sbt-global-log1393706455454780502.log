@@ -1,0 +1,8 @@
+[debug] > Exec(package, None, None)
+[debug] Evaluating tasks: Compile / package
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+[info] compiling 1 Scala source to F:\repos\airoport-destination-df\target\scala-2.12\classes ...
+[info] done compiling
+[success] Total time: 15 s, completed 10 груд. 2020 0:52:09
+[debug] > Exec(idea-shell, None, None)

@@ -1,0 +1,11 @@
+[debug] Packaging F:\repos\airoport-destination\target\scala-2.12\airoport-destination_2.12-1.0.jar ...
+[debug] Input file mappings:
+[debug] 	com
+[debug] 	  F:\repos\airoport-destination\target\scala-2.12\classes\com
+[debug] 	com\procamp
+[debug] 	  F:\repos\airoport-destination\target\scala-2.12\classes\com\procamp
+[debug] 	com\procamp\MainRun$.class
+[debug] 	  F:\repos\airoport-destination\target\scala-2.12\classes\com\procamp\MainRun$.class
+[debug] 	com\procamp\MainRun.class
+[debug] 	  F:\repos\airoport-destination\target\scala-2.12\classes\com\procamp\MainRun.class
+[debug] Done packaging.
