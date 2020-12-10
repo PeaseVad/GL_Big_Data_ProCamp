@@ -1,5 +1,5 @@
-1)gsutil gs://globallogic-procamp-bigdata-datasets/Flight_Delays_and_Cancellations/airlines.csv .
-2)gsutil gs://globallogic-procamp-bigdata-datasets/Flight_Delays_and_Cancellations/flights.csv .
+1)gsutil cp gs://globallogic-procamp-bigdata-datasets/Flight_Delays_and_Cancellations/airlines.csv .
+2)gsutil cp gs://globallogic-procamp-bigdata-datasets/Flight_Delays_and_Cancellations/flights.csv .
 
 3)hdfs dfs -mkdir -p /bdpc/hadoop-hive/flights
 4)hdfs dfs -mkdir -p /bdpc/hadoop-hive/airlines
