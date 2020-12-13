@@ -1,0 +1,6 @@
+com\globallogic\bdpc\mapreduce\airlines\AirlinesMapper.class
+com\globallogic\bdpc\mapreduce\airlines\AirlinesMapperAgr$MYCOUNTER.class
+com\globallogic\bdpc\mapreduce\airlines\AirlinesReducer.class
+com\globallogic\bdpc\mapreduce\airlines\AirlinesReducerAgr.class
+com\globallogic\bdpc\mapreduce\airlines\TopAirlines.class
+com\globallogic\bdpc\mapreduce\airlines\AirlinesMapperAgr.class
