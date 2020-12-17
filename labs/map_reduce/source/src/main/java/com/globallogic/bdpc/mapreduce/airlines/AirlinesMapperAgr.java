@@ -27,7 +27,7 @@ public class AirlinesMapperAgr extends Mapper<LongWritable, Text,  FloatWritable
 
     @Override
     protected void setup(Context context) throws IOException {
-
+        // GLC| It better to do the enrichment on Reducer side
         URI[] cacheFiles = context.getCacheFiles();
         String strLineRead;
 
