@@ -1,3 +1,5 @@
+>> GLC| Good job!
+
 1)gsutil cp gs://globallogic-procamp-bigdata-datasets/Flight_Delays_and_Cancellations/airlines.csv .
 2)gsutil cp gs://globallogic-procamp-bigdata-datasets/Flight_Delays_and_Cancellations/flights.csv .
 
@@ -7,9 +9,9 @@
 5)hdfs dfs -copyFromLocal ./flights.csv /bdpc/hadoop-hive/flights/
 6)hdfs dfs -copyFromLocal ./airlines.csv /bdpc/hadoop-hive/airlines/
 
-7)CREATE DATABASE vpasechnyk; 
+7)CREATE DATABASE vpasechnyk;
 
-8) USE vpasechnyk; 
+8) USE vpasechnyk;
 
 9) CREATE EXTERNAL TABLE IF NOT EXISTS airlines
 (iata_code string,
@@ -60,23 +62,24 @@ LOCATION '/bdpc/hadoop-hive/flights/'
 tblproperties ("skip.header.line.count"="1");
 
 
-
-11) CREATE  TABLE result 
+>> GLC| It'd be nice to see some execution results here, execution time etc
+11) CREATE  TABLE result
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 LOCATION '/bdpc/hadoop-hive/result/'
 AS WITH grouped_flights AS (
 SELECT airline, AVG(departure_delay) as avg_departure_delay  FROM flights GROUP BY airline SORT BY avg_departure_delay DESC LIMIT 5)
-SELECT airlines.iata_code,airlines.airline,grouped_flights.avg_departure_delay 
-FROM grouped_flights 
-JOIN airlines 
+SELECT airlines.iata_code,airlines.airline,grouped_flights.avg_departure_delay
+FROM grouped_flights
+JOIN airlines
 ON grouped_flights.airline =airlines.iata_code;
 
 
-12) We can validate  counts in files and counts in our tables, to check that all rows parsed correctly.Difference should be 1 row(our header). 
+12) We can validate  counts in files and counts in our tables, to check that all rows parsed correctly.Difference should be 1 row(our header).
+>> GLC| Yeap, but could you think about some general solution: what will you use / need to implement it?
 
-1) wc -l < airlines.csv  and  select count(*) from vpasechnyk.airlines 
+1) wc -l < airlines.csv  and  select count(*) from vpasechnyk.airlines
 2)  wc -l < flights.csv  and  select count(*) from vpasechnyk.flights;
 
 
