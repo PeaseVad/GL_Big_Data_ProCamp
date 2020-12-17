@@ -1,4 +1,6 @@
 package com.globallogic.bdpc.mapreduce.airlines;
+
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.IntWritable;
@@ -8,7 +10,6 @@ import org.apache.hadoop.mapreduce.Counters;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.conf.Configuration;
 
 public class TopAirlines {
     public static void main(String[] args) throws Exception {
@@ -28,8 +29,17 @@ public class TopAirlines {
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
+        // It's worth playing with compression
+        // http://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
+        // GLC: mapreduce.map.output.compress [false]	Should the outputs of the maps be compressed before being sent across the network. Uses SequenceFile compression.
+        // GLC: mapreduce.map.output.compress.codec[org.apache.hadoop.io.compress.DefaultCodec]	If the map outputs are compressed, how should they be compressed?
+        // GLC: conf.set("mapreduce.map.output.compress", true)
+        // GLC: FileOutputFormat.setCompressOutput();
+        // GLC: FileOutputFormat.setOutputCompressorClass(job, COMP_CLASS.class);
+
         // set the Mapper and Reducer class
         job.setMapperClass(AirlinesMapper.class);
+        // GLC: It's worth adding a combiner but you cannot reuse AirlinesReducer unless you modify it
         job.setReducerClass(AirlinesReducer.class);
 
         // specify the type of the output
