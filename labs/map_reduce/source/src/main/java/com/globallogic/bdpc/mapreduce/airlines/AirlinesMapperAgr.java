@@ -81,7 +81,7 @@ public class AirlinesMapperAgr extends Mapper<LongWritable, Text,  FloatWritable
         try {
             avg = (-1) * Float.parseFloat(lineArray[1]);
         } catch (NumberFormatException nfe) {
-            // GLC| well done, it's the write way to use the Counters
+            // GLC| well done, it's the right way to use the Counters
             context.getCounter(MYCOUNTER.PARSE_ERROR).increment(1);
             return;
         }
