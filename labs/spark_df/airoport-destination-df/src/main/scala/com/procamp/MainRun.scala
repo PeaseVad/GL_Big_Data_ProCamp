@@ -6,6 +6,7 @@ import org.apache.spark.sql.{SaveMode, SparkSession}
 object MainRun {
   def main(args: Array[String]) {
 
+    // GLC| Could you please make the code more readable and add comments
     val spark = SparkSession.builder.appName("airoport-destination-df")
     .getOrCreate()
 
