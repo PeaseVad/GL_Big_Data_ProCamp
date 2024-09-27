@@ -1,6 +1,7 @@
 package com.globallogic.bdpc.mapreduce.airlines;
 
 import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -13,12 +14,10 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.util.HashMap;
 
-import org.apache.hadoop.fs.Path;
-
 public class AirlinesMapperAgr extends Mapper<LongWritable, Text,  FloatWritable,Text> {
-    private static HashMap<String, String> AirlinesMap = new HashMap<String, String>();
-    private BufferedReader brReader;
-    private String airlineName = "";
+    private static HashMap<String, String> AirlinesMap = new HashMap<String, String>(); // GLC| Java syntax for class members: camelCase
+    private BufferedReader brReader; // GLC| some garbage ? :)
+    private String airlineName = ""; // GLC| It should be defined in the map function
 
 
     enum MYCOUNTER {
@@ -28,7 +27,7 @@ public class AirlinesMapperAgr extends Mapper<LongWritable, Text,  FloatWritable
 
     @Override
     protected void setup(Context context) throws IOException {
-
+        // GLC| It better to do the enrichment on Reducer side
         URI[] cacheFiles = context.getCacheFiles();
         String strLineRead;
 
@@ -71,6 +70,9 @@ public class AirlinesMapperAgr extends Mapper<LongWritable, Text,  FloatWritable
         try {
             airlineName = AirlinesMap.get(lineArray[0]);
         } finally {
+            // GLC| 1) there is a bug: if airlineName is null it will throw NPE
+            // GLC| 2) airlineName.isEmpty() instead of airlineName.equals("")
+            // GLC| 3) i'd use lineArray[0] or skip it with logging to a Counter instead of "NOT-FOUND"
             airlineName = ((airlineName.equals(null) || airlineName
                     .equals("")) ? "NOT-FOUND" : airlineName);
         }
@@ -79,12 +81,19 @@ public class AirlinesMapperAgr extends Mapper<LongWritable, Text,  FloatWritable
         try {
             avg = (-1) * Float.parseFloat(lineArray[1]);
         } catch (NumberFormatException nfe) {
+            // GLC| well done, it's the right way to use the Counters
             context.getCounter(MYCOUNTER.PARSE_ERROR).increment(1);
             return;
         }
 
+        // GLC| No much sense to add such a counter as there is a MR common one
         context.getCounter(MYCOUNTER.RECORD_COUNT).increment(1);
 
+        // GLC| It's worth reusing writables.
+        // GLC| You can initialise a writable along with the mapper instance and update its state before writing
+        // GLC| private Text t = new Text();
+        // GLC| ..
+        // GLC| public void map >> t.set("some value"); context.write(t, ..);
         context.write(new FloatWritable(avg),new Text(airlineName));
     }
 }
